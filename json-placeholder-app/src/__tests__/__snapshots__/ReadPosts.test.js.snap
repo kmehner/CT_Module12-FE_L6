@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostList Read component matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <h2>
+      JSON Placeholder Post List
+    </h2>
+    <div
+      class="list-group"
+    />
+  </div>
+</DocumentFragment>
+`;
