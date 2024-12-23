@@ -1,3 +1,7 @@
+import { TextEncoder, TextDecoder } from 'text-encoding';
+global.TextEncoder = TextEncoder;
+global.TextDecoder = TextDecoder;
+
 import React from 'react';
 import '@testing-library/jest-dom';
 import EditPost from '../components/EditPost';
@@ -5,18 +9,6 @@ import PostList from '../components/PostList'
 import axios from 'axios';
 import { render, waitFor, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter, Route, Routes} from 'react-router-dom';
-
-global.TextEncoder = class {
-    encode() {
-      return new Uint8Array();
-    }
-  };
-  
-  global.TextDecoder = class {
-    decode() {
-      return '';
-    }
-  };
 
 jest.mock('axios');
 

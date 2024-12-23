@@ -1,3 +1,7 @@
+import { TextEncoder, TextDecoder } from 'text-encoding';
+global.TextEncoder = TextEncoder;
+global.TextDecoder = TextDecoder;
+
 import React from 'react';
 import '@testing-library/jest-dom';
 import PostList from '../components/PostList';
