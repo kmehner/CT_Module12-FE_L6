@@ -28,8 +28,14 @@ const PostList = ()=> {
     }
 
     const handleEditButton = (id) =>{
-        navigate(`edit-post/${id}`)
+        navigate(`/edit-post/${id}`)
     }
+
+    // Explanation of the solution
+    //     Relative Path: edit-post/${id} without a leading / makes the navigation relative to the current path. For example, if the current path is /list, it navigates to /list/edit-post/${id}.
+    //     Absolute Path: Adding a / makes the navigation start from the root, ensuring it goes to /edit-post/${id} regardless of the current path. For example, if the current path is /list, it navigates to /edit-post/${id}.
+
+
     useEffect(() =>{
         fetchPosts();
     }, []);
@@ -44,7 +50,7 @@ const PostList = ()=> {
                 User ID: {post.userId}<br />
                 Title: {post.title}<br />
                 Body: {post.body}
-                <Button variant='warning' className='shadow-sm m-1 p-1' onClick={() => handleEditButton(post)}>
+                <Button variant='warning' className='shadow-sm m-1 p-1' onClick={() => handleEditButton(post.id)}>
                     Edit
                 </Button>
                 <Button variant='danger' className='shadow-sm m-1 p-1' onClick={() => handleDeletePost(post.id)}>
